@@ -1,5 +1,5 @@
 body {
-    background-image: url(../images/trainPhoto.jpg)
+    background-color: darkgray;
 }
 
 h1 {
@@ -9,23 +9,23 @@ h1 {
 
 td {
     color: white;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .jumbotron {
     background-color: black;
-    font-family: "Ravi Prakash", cursive;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: white;
 }
 
 .cell {
-    color: #EE901C;
-    font-family: 'Open Sans Condensed', sans-serif;
+    color: darkolivegreen;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
 }
 
 .card {
-    border: 2px solid #EE901C;
+    border: 2px solid darkolivegreen;
 }
 
 .mb-4 {
@@ -33,21 +33,21 @@ td {
     color: white;
     font-size: 24px;
     text-align: center;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .card-header {
     background-color: black;
-    color: #EE901C;
-    font-family: "Open Sans Condensed", sans-serif;
+    color: darkolivegreen;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
     text-align: center;
 }
 
 .card-body {
     background-color: black;
-    color: #EE901C;
-    font-family: "Open Sans Condensed", sans-serif;
+    color: darkolivegreen;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
 }
 
@@ -61,18 +61,18 @@ td {
 
 .btn-secondary {
     margin-top: 20px;
-    background-color: #EE901C;
+    background-color: darkolivegreen;
     border: solid 1px black;
 }
 
 .btn-secondary:hover {
-    background-color: #EE901C;
+    background-color: darkolivegreen;
     color: black;
-    border: 1px solid #EE901C;
+    border: 1px solid darkolivegreen;
 }
 
 .btn-secondary:visited {
-    background-color: #EE901C;
+    background-color: darkolivegreen;
     color: black;
-    border: 1px solid #EE901C;
+    border: 1px solid darkolivegreen;
 }
