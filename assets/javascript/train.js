@@ -11,11 +11,10 @@ const firebaseConfig = {
   
   firebase.initializeApp(firebaseConfig);
 
-// Create a variable to reference the database.
-var database = firebase.database();
-
+console.log(firebase)
+var trainData = firebase.database
 // Define initial variables.
-var trainName;
+var Name;
 var destination;
 var frequency = 0;
 var minutesAway = 0;
@@ -27,26 +26,35 @@ $("#add-train").on("click", function(event) {
   event.preventDefault();
 
   // Take in user input.
-  trainName = $("#train-name-input").val().trim();
-  destination = $("#destination-input").val().trim();
-  firstTrain = $("#first-train-input").val().trim();
-  frequency = $("#frequency-input").val().trim();
+  var Name = $("#train-name-input")
+ .val()
+ .trim();
+  var destination = $("#destination-input")
+  .val()
+  .trim();
+  var firstTrain = $("#first-train-input")
+  .val()
+  .trim();
+  var frequency = $("#frequency-input")
+  .val()
+  .trim();
 
   // Create database keys.
-  database.ref().push({
-    trainName: trainName,
+  var newTrain = {
+   Name: Name,
     destination: destination,
     frequency: frequency,
     firstTrain: firstTrain,
     nextArrival: nextArrival,
     dateAdded: firebase.database.ServerValue.TIMESTAMP
-  });
-
+  };
+  trainData.ref().push(newTrain);
+alert("You added a train! Choo Choo!")
   // Clears text boxes.
-  nameInput = $("#train-name-input").val("");
-  destinationInput = $("#destination-input").val("");
-  firstTrainInput = $("#first-train-input").val("");
-  frequencyInput = $("#frequency-input").val("");
+  $("#train-name-input").val("");
+  $("#destination-input").val("");
+ $("#first-train-input").val("");
+$("#frequency-input").val("");
 });
 
 // Conversion of input to next train time and minutes away.
@@ -57,7 +65,7 @@ database.ref().on("child_added", function(childSnapshot) {
   var minutesAway = childSnapshot.val().frequency - timeRemain;
   var nextArrival = moment().add(minutesAway, "minutes");
   nextArrival = moment(nextArrival).format("hh:mm");
-  var firebaseName = childSnapshot.val().trainName;
+  var firebaseName = childSnapshot.val().Name;
 	var firebaseDestination = childSnapshot.val().destination;
 	var firebaseFrequency = childSnapshot.val().frequency;
 
@@ -69,7 +77,4 @@ $("#train-table > tbody").append("<tr><td>" + firebaseName +
 "</td><td>" + nextArrival + 
 "</td><td>" + minutesAway + "</td></tr>");
 
-// Handle the errors
-}, function(errorObject) {
-console.log("Errors handled: " + errorObject.code);
-});
+
